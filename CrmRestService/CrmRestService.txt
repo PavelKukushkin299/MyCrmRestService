@@ -1,0 +1,271 @@
+CrmRestService
+
+
+https://github.com/PavelKukushkin299/NetCoreLearning.git
+
+http://smalozemov:xh3QzY2G@gitlab.tricolor.tv/AAfanasev/crm_fe_int.git
+
+https://PavelKukushkin299:jopajopajopa32github@github.com/PavelKukushkin299/NetCoreLearning.git
+
+****************************
+I
+1) Сравнение wcf (нет поддержги swagger, отказ microsoft) и net.core (net.core > 3.1 не знаю чем отличается от net.core 2.1, кроме того, 
+   что net.core 2.1 основан на NET.Framework, а net.core > 2.1 отдельная платформа с новым функционалом и отсутствующим привычны, 
+   например, из wcf поддерживается только клиентская часть и как следствио OrganizationService не работает.) в контексте сервисов и mvc-5 сервисов +++
+2) Выбор типа Net.core (использование стандартных библиотек и OrganizationService)
+3) Структура проекта 
+       И инжекция сервисов +++
+       И использование Bus +++
+       И парсинг заголовка
+       И Запуск метода GetDevices
+       И подключение к БД +++
+       И шина для REST +++
+       И настройки проекта что бы NuGet пакеты подтягивались в нужное место (в данном случае подтягиваются только пакеты Net.Core в специальную папку: 
+         C:\Users\prog\.nuget\packages\, вроде в иненте есть указания как изменить её, но нужно ли ?) - пока +++
+       И проверить сервис внутри сервиса +++
+       И проверить uow.Commit(); +++
+       И проверить POST; +++
+       И принять/вернуть enum как значение и как название
+       И проверить принятие объекта
+       И проверить возврат объекта
+
+4) Авторизация Windows и Oath ---
+5) Попытаться освободиться от зависимостей OrganizationService (может даже развернуть OrganizationService и сам сервис на разных серверах - это врядли получится, 
+	скорее нужно переписывать CrmCore (или Domain (надо наверно классы сущностей производить нет от Entity и EntityBase, а от интерфеса какого-нибудь.)), потому что у там есть классы наследуемые непосредственно от OrganizationService - это надо убрать) в 
+	верхнем уровне сервиса и от Базы данных и от внешних сервисов используя дополнительные обёртки и интерфейсы.
+5а) смотри п.п. 5 да надо подумать как сделать коммон репозиторий типа независимый от OrganizationService, что бы перейти на Элму (убрать жёсткую привязку к OrganizationService, как минмум через тип Entity).
+6) Настройка  свагера: генерация wsdl
+7) Создание документации свагером (ведение версий api)
+8) Создание метода клиента свагером.+ маршрутизация
+9) Упаковка всего это в контейнер Docker и Kubernetes (https://mcs.mail.ru/blog/chto-takoe-kontejnerizacija-prilozhenij)
+10) Юнит-тесты
+11) Логирование запроса и ответа
+12) Рассмотреть вариант перехода проекта с net.core 2.0 на на net.core > 2.0
+13) Развёртывание + swagger
+14) Обработка ошибок
+15) Настройка маршрутизатора
+16) Посмотреть заголовки рест запросов шины и сделать такие же чистые и джонсон
+17) настройка конфигов на разные площадки + настройка компиляции Release и Debug
+18) Вывод ошибок в логер (в логере нужна строка запроса).
+19) Работа с перечислителями (Enum)
+20) Ошибки запроса в логгер запроса
+21) параметры передаются:
+    - как часть пути
+    - в заголовке
+    - как параметры метода переменными
+    - как параметры метода моделью
+    - в теле запроса пост
+    Надо проверить всё и сделать для всего лог.
+22) Замерить время выполнения метода
+23) компиляция в разных режимах Debug и Release
+
+---
+II
+Предложения по улучшению ExchangeAbonentDevice (c виртуальной сущностью)
+
+---
+III
+Опционально: попробовать сделать тестилку ExchangeAbonentDevice с передачей на её вход тестового запроса.
+
+---
+IV
+Предложения по созданию бэка и веба для Элмы
+
+
+
+***************
+Microsoft.AspNetCore.App.Ref 3.1.10
+Microsoft.NETCore.App.Ref swap 3.1.0
+
+***********
+тут есть преиммущества Net.Core
+https://translated.turbopages.org/proxy_u/en-ru.ru.589ae1f0-63908e17-599d8095-74722d776562/https/www.c-sharpcorner.com/article/getting-started-with-net-core-3-1-part-one/
+
+***********
+
+Библиотека_STS.CrmConnector
+
+Диспетчер
+Дистребьютер
+Провайдер
+Менеджер
+
+
+https://www.crmanswers.net/2021/05/microsoftpowerplatformdataverseclient.html
+https://nishantrana.me/2019/08/24/connect-to-dynamics-365-web-api-using-oauth-2-0-client-credentials/
+https://stackoverflow.com/questions/73875923/how-to-create-crmserviceclient-instance-in-net-core-3-1
+https://learn.microsoft.com/ru-ru/dotnet/core/tutorials/creating-app-with-plugin-support
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/request-response?view=aspnetcore-7.0&viewFallbackFrom=aspnetcore-2.2
+https://gigi.nullneuron.net/gigilabs/the-adapter-design-pattern-for-dtos-in-c/
+https://topherlandry.wordpress.com/2013/10/08/creating-a-generic-type-converter-for-c/
+https://question-it.com/questions/4942255/kak-mne-peredavat-dannye-mezhdu-klassami-i-urovnjami-prilozhenija
+https://stackoverflow.com/questions/36109052/inject-service-into-action-filter
+https://github.com/domaindrivendev/Swashbuckle.AspNetCore#swashbuckleaspnetcoreswaggergen
+
+**********
+RESTful API сервисов
+
+STS.Tricolor.Xrm.Api
+
+*************
+https://habr.com/ru/post/437002/
+
+**********************************
+{00000000-0000-0001-0000-000000AEF439}
+http://localhost:49438/api/AbonentManagement/CheckPasswordSending/%7B00000000-0000-0001-0000-000000AEF439%7D
+---
+http://localhost:49438/api/AbonentManagement/AbonentBonus/%7B00000000-0000-0001-0000-000000AEF439%7D
+--
+http://localhost:49438/api/AbonentManagement/UpdateAbonent/{00000000-0000-0001-0000-000000AEF439}
+--
+http://localhost:49438/api/AbonentManagement/GetDevices/6
+*********
+abonent?.SmartCardID
+"12002301121020"
+---
+device.Id
+{00000000-0000-0001-0000-000000aef439}
+----
+http://localhost:49438/api/AbonentManagement/GetAbonentBySmartCard/12002301121020
+
+***********
+
+ var connectionString = ConfigurationManager.ConnectionStrings["CRMDB"].ConnectionString;
+                AbonentSelector = new AbonentSelector(connectionString, Logger);
+
+*************************
+Про Docker есть в книге ASP.NET_Core_Razr... (и про развёртывание, и про кроссплатформенность и про логгирование и про тестирование и про настройку конвейера, соглашения)
+
+**************
+https://stackoverflow.com/questions/56948287/how-to-trace-all-http-requests-in-net-core-2-1-globally
+https://www.azurefromthetrenches.com/capturing-and-tracing-all-http-requests-in-c-and-net/
+https://www.thecodebuzz.com/read-request-response-netcore2-0/
+https://stackoverflow.com/questions/40494913/how-to-read-request-body-in-an-asp-net-core-webapi-controller
+https://kimsereyblog.blogspot.com/2017/11/swagger-for-asp-net-core-api-development.html (тут есть про OAuth идентификацию)
+https://kimsereyblog.blogspot.com/2017/09/implicit-flow-with-identity-server-and.html (и тут есть про OAuth идентификацию)
+https://question-it.com/questions/4942255/kak-mne-peredavat-dannye-mezhdu-klassami-i-urovnjami-prilozhenija
+https://code-maze.com/swagger-ui-asp-net-core-web-api/
+https://stackoverflow.com/questions/42039003/set-the-reason-on-a-httpresponse-in-asp-net-core-from-middlware
+https://stackoverflow.com/questions/38630076/asp-net-core-web-api-exception-handling
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-5.0
+http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+https://github.com/dotnet/aspnetcore/blob/main/src/Http/Http.Abstractions/src/StatusCodes.cs
+https://stackoverflow.com/questions/37690114/how-to-return-a-specific-status-code-and-no-contents-from-controller
+https://javascopes.com/rest-api-error-handling-best-practices-e10dddb9/
+https://stackoverflow.com/questions/38630076/asp-net-core-web-api-exception-handling
+https://learn.microsoft.com/ru-ru/aspnet/core/web-api/advanced/formatting?view=aspnetcore-6.0
+--
+https://github.com/domaindrivendev/Swashbuckle.AspNetCore#swashbuckleaspnetcoreswaggergen
+https://learn.microsoft.com/ru-ru/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-7.0
+https://stackoverflow.com/questions/51158971/restrict-accepted-media-types-in-asp-net-core-controller-action
+https://habr.com/ru/company/simbirsoft/blog/707108/
+---
+https://blog.alexellis.io/3-steps-to-msbuild-with-docker/
+https://www.how2shout.com/how-to/how-to-install-iis-on-windows-10-using-powershell.html
+--
+https://jeffreyfritz.com/2018/09/deploying-asp-net-core-with-net-framework-using-docker/
+https://blog.alexellis.io/run-iis-asp-net-on-windows-10-with-docker/
+https://blog.alexellis.io/3-steps-to-msbuild-with-docker/
+https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker
+https://github.com/dotnet-architecture/eShopModernizing
+https://www.how2shout.com/how-to/how-to-install-iis-on-windows-10-using-powershell.html
+https://learn.microsoft.com/ru-ru/dotnet/core/docker/build-container?tabs=windows
+https://learn.microsoft.com/ru-ru/iis/get-started/getting-started-with-iis/create-a-web-site
+https://github.com/microsoft/dotnet-framework-docker/blob/main/samples/README.md
+https://hub.docker.com/_/microsoft-dotnet-framework-sdk
+https://github.com/dotnet/dotnet-docker/blob/8fcde60134b83f440c76763f755354208a1034ac/documentation/scenarios/installing-dotnet.md
+https://github.com/microsoft/dotnet-framework-docker/blob/main/samples/aspnetapp/README.md#view-the-aspnet-app-in-a-running-container-on-windows
+https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/
+https://hub.docker.com/_/microsoft-dotnet-framework/
+https://hub.docker.com/_/microsoft-dotnet-framework/
+https://hub.docker.com/_/microsoft-dotnet-samples/
+https://hub.docker.com/_/microsoft-dotnet
+https://hub.docker.com/_/microsoft-dotnet-sdk/
+https://hub.docker.com/_/microsoft-dotnet
+https://stackoverflow.com/questions/62634198/mcr-microsoft-com-dotnet-core-aspnet2-2-for-windows-container-not-available
+https://www.grapecity.com/blogs/integrate-dynamics-365-crm-using-entity-framework-core
+
+**************
+ Swashbuckle.AspNetCore
+Затем регистрируем его на сервисах с помощью метода расширения AddSwaggerGen()
+Наконец, мы регистрируем оба промежуточных ПО: одно создает swagger.json, а другое делает доступным графический интерфейс:
+
+
+****************
+http://192.168.102.43:8080/SelfCareOperations/SelfCareOperations_v1?wsdl
+172.23.56.3:8080
+http://172.23.56.3:8080/SelfCareOperations/SelfCareOperations_v1?wsdl
+
+было
+api/AbonentManagement
+стало
+/swagger
+
+****************
+[#| 2022-11-30 13-14-32.929 | INFO | ApplicationManagement | Method: FindClient executed in 22 636 ms  | Request at: 2022-11-30 13.14.10 | POST | Request URL: http://localhost:49438/api/AbonentManagement/FindClient | "Request header":{"initiatorId":"","initiatorLogin":"","initiatorName":"","messageId":""} | "Request Body": {"initiatorId":"","initiatorLogin":"","initiatorName":"","messageId":""} | "Response header" : {"initiatorId":"","initiatorLogin":"","initiatorName":"","messageId":""} | "Response body" : {"initiatorId":"","initiatorLogin":"","initiatorName":"","messageId":""} | StatusCode: 200, ReasonPhrase: 'OK' #]
+
+
+http://localhost:49438//swagger/index.html
+
+
+******************
+context.HttpContext.Items.Add("ControllerName", loggerName);
+            context.HttpContext.Items.Add("ActionName", methodName);
+
+********************
+Status Code: 500; Internal Server Error 
+
+*****************
+https://metanit.com/sharp/aspnet5/20.1.php
+
+*****************
+http://192.168.0.103:8080/
+
+http://localhost:49438//swagger/index.html
+
+http://localhost:49438/api/AbonentManagement/GetDevices/800
+
+http://localhost:5000/api/AbonentManagement/GetDevices/800
+
+http://localhost:5000/swagger/index.html
+
+http://localhost:80/swagger/index.html
+
+*************
+http://localhost:5000/api/values
+
+************
+http://localhost:8080/swagger/index.html
+
+***********
+Закладки
+Панель закладок
+ASP.NET\REST
+ASP.NET\NetCore
+CRM\DataVers
+Swagger
+Docker
+UML
+Диаграммы
+ВнедрениеЗависимостей
+ДиаграммыПоследовательностей
+Авторизация (где то должно быть про OAuth (в срм и сваггере))
+Загрузка библиотек
+
+*****************
+тут вроде есть либа которую можно использовать NET.Core (data8) !!!
+https://markcarrington.dev/2021/11/15/connecting-to-on-prem-dynamics-from-net-core-without-oauth/
+https://github.com/Data8/DataverseClient
+https://github.com/Data8/DataverseClient
+--
+тут есть пример работы с организатионсервайс через httclient 
+https://github.com/microsoft/Dynamics365PSA/blob/master/Common/Common.Model/CRMSDK/Microsoft.Xrm.Sdk.Samples.cs
+
+*****************
+ Microsoft.PowerPlatform.Dataverse.Client
+---
+Привет.
+Лера сказала, что ты проводил исследование вопроса реализации приложения использующего библиотеки Microsoft dynamics CRM под Net.Core > 2.2
+Ты эту библиотеку планировал использовать Microsoft.PowerPlatform.Dataverse.Client, или что то другое ?
+
+**************

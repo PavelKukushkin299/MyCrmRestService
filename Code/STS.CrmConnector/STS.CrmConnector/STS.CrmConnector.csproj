@@ -5,4 +5,19 @@
     <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\..\CRM\GMCS.CrmCore\Infrastructure\GMCS.CrmCore.Xrm\GMCS.CrmCore.Xrm.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Xrm.Client">
+      <HintPath>..\..\..\..\..\..\..\..\Tricolor\GMCS.Tricolor.XRM\Dependency\microsoft.xrm.client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\..\..\..\..\..\..\..\CRM\GMCS.CrmCore\Dependency\9.0\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+
 </Project>

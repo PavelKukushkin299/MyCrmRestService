@@ -8,6 +8,6 @@ namespace STS.CrmConnector
 {
     public interface IConnector
     {
-        void Execute();
+        string Execute();
     }
 }

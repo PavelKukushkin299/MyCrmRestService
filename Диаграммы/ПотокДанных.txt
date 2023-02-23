@@ -1,0 +1,14 @@
+title Поток данных при выполнении Api запроса
+
+participant External System
+participant Controller
+participant Internal Service
+
+External System-->Controller:Запрос с типом: RequestData
+abox over Controller:Преобразование RequestData в InputDTO
+Controller->Internal Service:Запрос с типом InputDTO
+abox over Internal Service:Обработка запроса 
+abox over Internal Service:Создание ответа с типом OutputDTO
+Controller<--Internal Service:Ответ с типом: OutputDTO
+abox over Controller: Преобразование OutputDTO в ResponseData
+Controller-->External System:Ответ с типом: ResponseData

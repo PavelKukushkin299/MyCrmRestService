@@ -1,0 +1,21 @@
+title This is a title
+
+participant Infrastructure API App
+participant ResponseBodyEnabling
+participant Controller
+participant LogRequestCreator
+participant Logger
+
+Infrastructure API App->ResponseBodyEnabling:HttpRequest
+abox over ResponseBodyEnabling:Переключение буфера ответа
+ResponseBodyEnabling->Controller:HttpRequest
+abox over Controller:Выполнение запроса
+Controller->LogRequestCreator:HttpRequest + Response
+abox over LogRequestCreator:Создание содержимого лога
+abox over LogRequestCreator:Инициализация логгера
+LogRequestCreator->Logger:HttpRequest + Response
+abox over Logger:Логирование
+LogRequestCreator<--Logger:HttpRequest + Response
+ResponseBodyEnabling<--LogRequestCreator:HttpRequest + Response
+abox over ResponseBodyEnabling:Восстановление буфера ответа
+Infrastructure API App<--ResponseBodyEnabling:HttpRequest + Response
