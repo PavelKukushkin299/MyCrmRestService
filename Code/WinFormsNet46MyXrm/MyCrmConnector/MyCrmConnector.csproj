@@ -51,6 +51,7 @@
     <Compile Include="Xrm\Sdk\Client\AuthenticationPolicyImporter.cs" />
     <Compile Include="Xrm\Sdk\Client\AuthenticationProviderType.cs" />
     <Compile Include="Xrm\Sdk\Client\ClaimsPolicyConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\DiscoveryServiceConfiguration.cs" />
     <Compile Include="Xrm\Sdk\Client\FailoverPolicy.cs" />
     <Compile Include="Xrm\Sdk\Client\IdentityProvider.cs" />
     <Compile Include="Xrm\Sdk\Client\IdentityProviderTrustConfiguration.cs" />

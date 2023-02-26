@@ -11,56 +11,60 @@ using System.Collections.Generic;
 
 namespace Microsoft.Xrm.Sdk.Linq
 {
-  internal sealed class PagedItemCollection<TSource> : 
-    PagedItemCollectionBase,
-    IEnumerable<TSource>,
-    IEnumerable,
-    IEnumerator<TSource>,
-    IDisposable,
-    IEnumerator
-  {
-    private TSource current;
-    private IEnumerator<TSource> enumerator;
-    private IEnumerable<TSource> source;
-
-    public PagedItemCollection(
-      IEnumerable<TSource> source,
-      QueryExpression query,
-      string pagingCookie,
-      bool moreRecords)
-      : base(query, pagingCookie, moreRecords)
+    internal sealed class PagedItemCollection<TSource> :
+      PagedItemCollectionBase,
+      IEnumerable<TSource>,
+      IEnumerable,
+      IEnumerator<TSource>,
+      IDisposable,
+      IEnumerator
     {
-      this.source = source;
-    }
+        private TSource current;
+        private IEnumerator<TSource> enumerator;
+        private IEnumerable<TSource> source;
 
-    public PagedItemCollection<TSource> Clone() => new PagedItemCollection<TSource>(this.source, this.Query, this.PagingCookie, this.MoreRecords);
+        public PagedItemCollection(
+          IEnumerable<TSource> source,
+          QueryExpression query,
+          string pagingCookie,
+          bool moreRecords)
+          : base(query, pagingCookie, moreRecords)
+        {
+            this.source = source;
+        }
 
-    public IEnumerator<TSource> GetEnumerator() => (IEnumerator<TSource>) this.Clone();
+        public PagedItemCollection<TSource> Clone() => new PagedItemCollection<TSource>(this.source, this.Query, this.PagingCookie, this.MoreRecords);
 
-    IEnumerator IEnumerable.GetEnumerator() => (IEnumerator) this.GetEnumerator();
+        public IEnumerator<TSource> GetEnumerator() => (IEnumerator<TSource>)this.Clone();
 
-    public TSource Current => this.current;
+        IEnumerator IEnumerable.GetEnumerator() => (IEnumerator)this.GetEnumerator();
 
-    public void Dispose()
-    {
-      if (this.enumerator != null)
-        this.enumerator.Dispose();
-      this.enumerator = (IEnumerator<TSource>) null;
-      this.current = default (TSource);
-    }
+        public TSource Current => this.current;
 
-    object IEnumerator.Current => (object) this.Current;
+        public void Dispose()
+        {
+            if (this.enumerator != null)
+                this.enumerator.Dispose();
+            this.enumerator = (IEnumerator<TSource>)null;
+            this.current = default(TSource);
+        }
 
-    public bool MoveNext()
-    {
-      if (this.enumerator == null)
-        this.enumerator = this.source.GetEnumerator();
-      if (!this.enumerator.MoveNext())
-        return false;
-      this.current = this.enumerator.Current;
-      return true;
-    }
+        object IEnumerator.Current => (object)this.Current;
 
-    public void Reset() => throw new NotImplementedException();
+        public bool MoveNext()
+        {
+            if (this.enumerator == null)
+                this.enumerator = this.source.GetEnumerator();
+            if (!this.enumerator.MoveNext())
+                return false;
+            this.current = this.enumerator.Current;
+            return true;
+        }
+
+        public void Reset()
+        {
+            Console.WriteLine("Reset");
+            throw new NotImplementedException();
+        }
   }
 }

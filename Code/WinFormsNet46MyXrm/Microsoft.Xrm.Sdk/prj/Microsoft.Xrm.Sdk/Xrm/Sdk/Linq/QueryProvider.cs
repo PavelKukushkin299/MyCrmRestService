@@ -596,6 +596,7 @@ label_16:
             //  result = _param1.element as Entity
             //}).Select(_param1 => _param1.result == null || !(_param1.result.Id != Guid.Empty) ? _param1.\u003C\u003Eh__TransparentIdentifier1.element : (object) this.AttachToContext(_param1.result));
             // тут
+            Console.WriteLine("ExecuteAnonymousType");
             throw new NotImplementedException();
         }
 

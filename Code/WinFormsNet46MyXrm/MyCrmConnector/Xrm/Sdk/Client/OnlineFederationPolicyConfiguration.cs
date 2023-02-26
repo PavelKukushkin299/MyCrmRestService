@@ -29,6 +29,7 @@ namespace MyCrmConnector.Client
             //  return;
             //OrgIdentityProviderTrustConfiguration trustConfiguration1 = new OrgIdentityProviderTrustConfiguration(xrmPolicy);
             //this.OnlineProviders.Add(trustConfiguration1.Endpoint.GetServiceRoot(), (IdentityProviderTrustConfiguration) trustConfiguration1);
+            Console.WriteLine("OnlineFederationPolicyConfiguration");
             throw new NotImplementedException();
         }
 
@@ -48,6 +49,7 @@ namespace MyCrmConnector.Client
             //  LiveIdentityProviderTrustConfiguration trustConfiguration2 = new LiveIdentityProviderTrustConfiguration(xrmPolicy);
             //  this.OnlineProviders.Add(new Uri(absoluteUri), (IdentityProviderTrustConfiguration) trustConfiguration2);
             //}
+            Console.WriteLine("InitializeLiveTrustConfiguration");
             throw new NotImplementedException();
         }
   }

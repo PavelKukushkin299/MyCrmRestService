@@ -716,6 +716,7 @@ label_4:
             //  }, (IEnumerable<LinkDescriptor>) list);
             //}
             // тут
+            Console.WriteLine("GetDisassociateRequests");
             throw new NotImplementedException();
         }
 
@@ -1002,6 +1003,7 @@ label_4:
             //  RelatedEntities = OrganizationServiceContext.ToEntityReferenceCollection((IEnumerable<LinkDescriptor>) grp)
             //});
             // тут
+            Console.WriteLine("ToAssociateRequests");
             throw new NotImplementedException();
         }
 
@@ -1266,6 +1268,7 @@ label_4:
             //  entities = _param1.relatedEntity.Value.Entities.ToList<Entity>()
             //}).SelectMany(_param1 => (IEnumerable<Entity>) _param1.entities, (_param1, target) => new Tuple<Entity, Relationship, Entity>(entity, _param1.\u003C\u003Eh__TransparentIdentifier0.relationship, target));
             // тут
+            Console.WriteLine("TraverseRelatedEntities");
             throw new NotImplementedException(); 
         }
 

@@ -82,6 +82,7 @@ namespace MyCrmConnector.Client
             this.SetAuthenticationConfiguration();
             if (checkForSecondary)
             {
+                Console.WriteLine("ServiceConfiguration");
                 throw new NotImplementedException(); 
                 //this.SetEndpointSwitchingBehavior();
             }
@@ -110,6 +111,7 @@ namespace MyCrmConnector.Client
             //ChannelFactory<TService> localChannelFactory = this.CreateLocalChannelFactory();
             //localChannelFactory.Credentials.SupportInteractive = false;
             //return localChannelFactory;
+            Console.WriteLine("CreateChannelFactory");
             throw new NotImplementedException();
         }
 
@@ -161,6 +163,7 @@ namespace MyCrmConnector.Client
             //    authenticationCredentials.EndpointType = this._tokenEndpointType;
             //authenticationCredentials.IssuerEndpoints = this.CrossRealmIssuerEndpoints[crossRealmSts];
             //return this.AuthenticateInternal(authenticationCredentials);
+            Console.WriteLine("AuthenticateCrossRealm");
             throw new NotImplementedException();
         }
 
@@ -168,6 +171,7 @@ namespace MyCrmConnector.Client
         {
             //IdentityProviderTrustConfiguration trustConfiguration = this.TryGetOnlineTrustConfiguration();
             //return trustConfiguration == null ? (IdentityProvider)null : IdentityProviderLookup.Instance.GetIdentityProvider(trustConfiguration.Endpoint.GetServiceRoot(), trustConfiguration.Endpoint.GetServiceRoot(), userPrincipalName);
+            Console.WriteLine("GetIdentityProvider");
             throw new NotImplementedException();
         }
 
@@ -188,6 +192,7 @@ namespace MyCrmConnector.Client
             //this.ConfigureCredentials((ChannelFactory)localChannelFactory, clientCredentials);
             //localChannelFactory.Credentials.SupportInteractive = clientCredentials != null && clientCredentials.SupportInteractive;
             //return localChannelFactory;
+            Console.WriteLine("CreateChannelFactory");
             throw new NotImplementedException();
         }
 
@@ -204,6 +209,7 @@ namespace MyCrmConnector.Client
             //        return authenticationCredentials.SecurityTokenResponse;
             //}
             //return (SecurityTokenResponse)null;
+            Console.WriteLine("Authenticate");
             throw new NotImplementedException();
         }
 
@@ -221,6 +227,7 @@ namespace MyCrmConnector.Client
             //    ClientCredentials = clientCredentials,
             //    SecurityTokenResponse = (SecurityTokenResponse)null
             //});
+            Console.WriteLine("Authenticate");
             throw new NotImplementedException();
         }
 
@@ -267,6 +274,7 @@ namespace MyCrmConnector.Client
             //        Token = securityToken
             //    }
             //});
+            Console.WriteLine("Authenticate");
             throw new NotImplementedException();
         }
 
@@ -290,6 +298,7 @@ namespace MyCrmConnector.Client
             //        Token = securityToken
             //    }
             //});
+            Console.WriteLine("Authenticate");
             throw new NotImplementedException();
         }
 
@@ -309,6 +318,7 @@ namespace MyCrmConnector.Client
             //    default:
             //        return authenticationCredentials;
             //}
+            Console.WriteLine("Authenticate");
             throw new NotImplementedException();
         }
 
@@ -382,16 +392,19 @@ namespace MyCrmConnector.Client
 
         public bool CanSwitch(Uri currentUri)
         {
+            Console.WriteLine("CanSwitch");
             throw new NotImplementedException();
         }
 
         public bool HandleEndpointSwitch()
         {
+            Console.WriteLine("HandleEndpointSwitch");
             throw new NotImplementedException();
         }
 
         public void SwitchEndpoint()
         {
+            Console.WriteLine("SwitchEndpoint");
             throw new NotImplementedException();
         }
 

@@ -19,8 +19,10 @@ namespace MyCrmConnector
         {
             if (serviceUri != (Uri)null)
             {
-                //if (typeof(TService) == typeof(IDiscoveryService))
-                //    return new DiscoveryServiceConfiguration(serviceUri) as IServiceManagement<TService>;
+                if (typeof(TService) == typeof(IDiscoveryService))
+                {
+                    return new MyCrmConnector.Client.DiscoveryServiceConfiguration(serviceUri) as IServiceManagement<TService>;
+                }
                 if (typeof(TService) == typeof(IOrganizationService))
                 {
                     return new MyCrmConnector.Client.OrganizationServiceConfiguration(serviceUri, enableProxyTypes, assembly) as IServiceManagement<TService>;

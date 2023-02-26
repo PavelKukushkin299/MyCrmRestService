@@ -39,6 +39,7 @@ namespace MyCrmConnector.Client
                 //binding.TrustVersion = this._trustVersion;
                 //binding.SecurityMode = this._securityMode;
                 //return (Binding) binding;
+                Console.WriteLine("Binding");
                 throw new NotImplementedException();
       }
     }

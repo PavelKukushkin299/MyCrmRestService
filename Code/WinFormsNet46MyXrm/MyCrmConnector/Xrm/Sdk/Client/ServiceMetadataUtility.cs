@@ -118,6 +118,7 @@ namespace MyCrmConnector.Client
             //  IssuerBinding = (Binding) tokenWsTrustBinding2
             //});
             //return endpointDictionary;
+            Console.WriteLine("RetrieveLiveIdIssuerEndpoints");
             throw new NotImplementedException();
         }
 
@@ -323,7 +324,7 @@ namespace MyCrmConnector.Client
             policyImporter.Add((IPolicyImportExtension)new AuthenticationPolicyImporter(importer1));
             policyImporter.AddRange((IEnumerable<IPolicyImportExtension>)importExtensions);
             return policyImporter;
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private static bool TryRetrieveMetadata(
@@ -394,6 +395,7 @@ namespace MyCrmConnector.Client
             //clientCredentials.Windows.ClientCredential = networkCredential;
             //clientCredentials.UserName.UserName = string.Empty;
             //clientCredentials.UserName.Password = string.Empty;
+            Console.WriteLine("AdjustUserNameForWindows");
             throw new NotImplementedException();
         }
     }
