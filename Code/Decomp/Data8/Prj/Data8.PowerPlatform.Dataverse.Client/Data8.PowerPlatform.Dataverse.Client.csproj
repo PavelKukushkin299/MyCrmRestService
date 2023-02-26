@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Stas\Projects\Tricolor\To365\MyCrmRestService\Code\Decomp\Data8\Data8.PowerPlatform.Dataverse.Client.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{366EE203-BF9A-4FF3-A5D8-23F03A3AA30B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Data8.PowerPlatform.Dataverse.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <ApplicationVersion>2.3.1.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.PowerPlatform.Dataverse.Client.1.0.26\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Memory.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Binder.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.3.1.8\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Http.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Options.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.35.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.4.35.1\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.18.9.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.2.18.9\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.6.8.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.WsTrust, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.WsTrust.6.8.0\lib\netstandard2.0\Microsoft.IdentityModel.Protocols.WsTrust.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.8.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens.Saml, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.Saml.6.8.0\lib\net461\Microsoft.IdentityModel.Tokens.Saml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Xml, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Xml.6.8.0\lib\net461\Microsoft.IdentityModel.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.PowerPlatform.Dataverse.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.PowerPlatform.Dataverse.Client.1.0.26\lib\net462\Microsoft.PowerPlatform.Dataverse.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Rest.ClientRuntime.2.3.20\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.PowerPlatform.Dataverse.Client.1.0.26\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Federation, Version=4.10.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Federation.4.10.0\lib\netstandard2.0\System.ServiceModel.Federation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http, Version=4.10.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Http.4.10.0\lib\net461\System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives, Version=4.10.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Primitives.4.10.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security, Version=4.10.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Security.4.10.0\lib\net461\System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.6.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthClient.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ClaimsBasedAuthClient.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\IInnerOrganizationService.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\OnPremiseClient.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\OrgServiceAsyncWrapper.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ProxySerializationSurrogate.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Namespaces.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\WsdlLoader.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Definitions.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Import.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\PolicyItem.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\MultiPolicy.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Policy.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\ExactlyOne.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\All.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\EndorsingSupportingTokens.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\IssuedToken.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Issuer.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\AddressMetadata.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\SoapMetadata.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\MetadataSection.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\MetadataReference.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\SignedEncryptedSupportingTokens.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\UsernameToken.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Trust13.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\AuthenticationPolicy.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\AuthenticationType.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Binding.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\PolicyReference.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Service.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Port.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\SoapAddress.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\EndpointReference.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\Wsdl\Identity.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\Authenticator.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\BaseAuthRequest.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\BinaryExchange.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\CombinedHash.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\EncryptedKey.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\FaultReader.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\Lifetime.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\Namespaces.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\RequestSecurityToken.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\RequestSecurityTokenResponse.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\RequestSecurityTokenResponseCollection.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\SecurityContextToken.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\SecurityHeader.cs" />
+    <Compile Include="Data8\PowerPlatform\Dataverse\Client\ADAuthHelpers\SecurityTokenReference.cs" />
+    <Compile Include="NSspi\ByteWriter.cs" />
+    <Compile Include="NSspi\EnumStringAttribute.cs" />
+    <Compile Include="NSspi\EnumMgr.cs" />
+    <Compile Include="NSspi\NativeMethods.cs" />
+    <Compile Include="NSspi\PackageNames.cs" />
+    <Compile Include="NSspi\PackageSupport.cs" />
+    <Compile Include="NSspi\SecPkgInfo.cs" />
+    <Compile Include="NSspi\SecPkgCapability.cs" />
+    <Compile Include="NSspi\SecurityStatus.cs" />
+    <Compile Include="NSspi\SecurityStatusExtensions.cs" />
+    <Compile Include="NSspi\SSPIException.cs" />
+    <Compile Include="NSspi\RawSspiHandle.cs" />
+    <Compile Include="NSspi\SafeSspiHandle.cs" />
+    <Compile Include="NSspi\TimeStamp.cs" />
+    <Compile Include="NSspi\Buffers\SecureBufferInternal.cs" />
+    <Compile Include="NSspi\Buffers\SecureBuffer.cs" />
+    <Compile Include="NSspi\Buffers\SecureBufferAdapter.cs" />
+    <Compile Include="NSspi\Buffers\SecureBufferDataRep.cs" />
+    <Compile Include="NSspi\Buffers\SecureBufferDescInternal.cs" />
+    <Compile Include="NSspi\Buffers\BufferType.cs" />
+    <Compile Include="NSspi\Credentials\NativeAuthData.cs" />
+    <Compile Include="NSspi\Credentials\NativeAuthDataFlag.cs" />
+    <Compile Include="NSspi\Credentials\Credential.cs" />
+    <Compile Include="NSspi\Credentials\CredentialNativeMethods.cs" />
+    <Compile Include="NSspi\Credentials\CredentialQueryAttrib.cs" />
+    <Compile Include="NSspi\Credentials\CredentialUse.cs" />
+    <Compile Include="NSspi\Credentials\CurrentCredential.cs" />
+    <Compile Include="NSspi\Credentials\PasswordCredential.cs" />
+    <Compile Include="NSspi\Credentials\QueryNameAttribCarrier.cs" />
+    <Compile Include="NSspi\Credentials\SafeCredentialHandle.cs" />
+    <Compile Include="NSspi\Contexts\ClientContext.cs" />
+    <Compile Include="NSspi\Contexts\Context.cs" />
+    <Compile Include="NSspi\Contexts\ContextAttrib.cs" />
+    <Compile Include="NSspi\Contexts\ContextNativeMethods.cs" />
+    <Compile Include="NSspi\Contexts\SecPkgContext_Sizes.cs" />
+    <Compile Include="NSspi\Contexts\SecPkgContext_String.cs" />
+    <Compile Include="NSspi\Contexts\ContextQueryAttrib.cs" />
+    <Compile Include="NSspi\Contexts\SafeContextHandle.cs" />
+    <Compile Include="NSspi\Contexts\SafeTokenHandle.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Text.Json.6.0.2\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>

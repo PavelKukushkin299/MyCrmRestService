@@ -12,13 +12,13 @@
 
   <ItemGroup>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>..\..\..\..\..\..\..\..\Tricolor\GMCS.Tricolor.XRM\Dependency\9.0\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <HintPath>..\Dependency\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk">
-      <HintPath>..\..\..\..\..\..\..\..\Tricolor\GMCS.Tricolor.XRM\Dependency\9.0\Microsoft.Xrm.Sdk.dll</HintPath>
+      <HintPath>..\Dependency\microsoft.xrm.sdk.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Tooling.Connector">
-      <HintPath>..\..\..\..\..\..\..\..\Tricolor\GMCS.Tricolor.XRM\Dependency\9.0\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+      <HintPath>..\Dependency\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceModel" />
   </ItemGroup>

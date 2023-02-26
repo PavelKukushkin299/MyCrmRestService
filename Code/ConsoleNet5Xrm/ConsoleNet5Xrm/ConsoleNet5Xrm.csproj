@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.0.26" />
+    <PackageReference Include="Data8.PowerPlatform.Dataverse.Client" Version="2.3.1" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleNet46Xrm", "ConsoleNet46Xrm\ConsoleNet46Xrm.csproj", "{E45547BA-30AE-49B5-8F16-DC954FB17D28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsNet46Xrm", "WinFormsNet46Xrm\WinFormsNet46Xrm.csproj", "{46AFF72C-FCFB-49D8-BF2B-8805463ED16F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XrmLibs", "XrmLibs", "{4EAAC39A-C7B6-49C0-9181-F45FCE71BAD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xrm.Sdk", "..\Decomp\Microsoft.Xrm.Sdk\prj\Microsoft.Xrm.Sdk\Microsoft.Xrm.Sdk.csproj", "{2765100F-7FE9-43ED-820A-4EC87C73D47B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E45547BA-30AE-49B5-8F16-DC954FB17D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E45547BA-30AE-49B5-8F16-DC954FB17D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E45547BA-30AE-49B5-8F16-DC954FB17D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E45547BA-30AE-49B5-8F16-DC954FB17D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46AFF72C-FCFB-49D8-BF2B-8805463ED16F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AFF72C-FCFB-49D8-BF2B-8805463ED16F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AFF72C-FCFB-49D8-BF2B-8805463ED16F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AFF72C-FCFB-49D8-BF2B-8805463ED16F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2765100F-7FE9-43ED-820A-4EC87C73D47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2765100F-7FE9-43ED-820A-4EC87C73D47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2765100F-7FE9-43ED-820A-4EC87C73D47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2765100F-7FE9-43ED-820A-4EC87C73D47B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2765100F-7FE9-43ED-820A-4EC87C73D47B} = {4EAAC39A-C7B6-49C0-9181-F45FCE71BAD8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF0B79C1-083C-4651-8692-990A1B7D3B24}
+	EndGlobalSection
+EndGlobal

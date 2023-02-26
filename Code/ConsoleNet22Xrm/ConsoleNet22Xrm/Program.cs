@@ -12,7 +12,7 @@ namespace ConsoleNet22Xrm
             Console.WriteLine("Hello World!");
 
             var crmManager = new CrmManager();
-            OrganizationServiceContext context = crmManager.GetCrmContext();
+            var context = crmManager.GetCrmContext();
 
             var userGuid = new Guid("{1E932C9A-A92F-E511-80E8-0050568732BC}");
             var user = (from u in context.CreateQuery("systemuser")

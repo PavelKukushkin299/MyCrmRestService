@@ -1,7 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Data8.PowerPlatform.Dataverse.Client;
+using Microsoft.Extensions.Configuration;
 using Microsoft.PowerPlatform.Dataverse.Client;
+using Microsoft.Xrm.Sdk;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 
 // https://github.com/microsoft/PowerApps-Samples/tree/master/dataverse/orgsvc/C%23-NETCore/ServiceClient
@@ -42,6 +45,7 @@ namespace ConsoleNet5Xrm
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Начало.");
 
             var app = new Program();
@@ -50,9 +54,13 @@ namespace ConsoleNet5Xrm
             //var serviceClient =
             //    new ServiceClient(connectionString);
 
-            var serviceClient =
-                new ServiceClient(
+            //var serviceClient =
+            //    new ServiceClient(
 
+
+            IOrganizationService orgService = new OnPremiseClient("http://172.23.57.20/NSC/XRMServices/2011/Organization.svc", "bss\\crm-sysuser", "[2cekthsfhukm]");
+
+            //var orgService = new ServiceClient(
 
             Console.WriteLine("Конец.");
             Console.ReadLine();
