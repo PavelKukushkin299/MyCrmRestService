@@ -255,6 +255,8 @@ UML
 *****************
 тут вроде есть либа которую можно использовать NET.Core (data8) !!!
 https://markcarrington.dev/2021/11/15/connecting-to-on-prem-dynamics-from-net-core-without-oauth/
+https://learn.microsoft.com/en-us/dynamics365/customerengagement/on-premises/deploy/post-installation-configuration-guidelines-dynamics-365?view=op-9-1&WT.mc_id=DX-MVP-5004203#configure-windows-server-for-dynamics-365-customer-engagement-on-premises-applications-that-use-oauth
+https://learn.microsoft.com/en-us/dynamics365/customerengagement/on-premises/deploy/post-installation-configuration-guidelines-dynamics-365?view=op-9-0&WT.mc_id=DX-MVP-5004203#configure-windows-server-for-dynamics-365-customer-engagement-on-premises-applications-that-use-oauth
 https://github.com/Data8/DataverseClient
 https://github.com/Data8/DataverseClient
 --
@@ -269,3 +271,6 @@ https://github.com/microsoft/Dynamics365PSA/blob/master/Common/Common.Model/CRMS
 Ты эту библиотеку планировал использовать Microsoft.PowerPlatform.Dataverse.Client, или что то другое ?
 
 **************
+
+Microsoft.PowerPlatform.Dataverse.Client
+Microsoft.PowerPlatform.Dataverse.Client.Dynamics

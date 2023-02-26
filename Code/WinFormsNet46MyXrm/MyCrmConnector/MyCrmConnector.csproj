@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9F5977F-96A6-4A79-B8D9-094DA81873E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyCrmConnector</RootNamespace>
+    <AssemblyName>MyCrmConnector</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrmClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xrm\Sdk\ClientExceptionHelper.cs" />
+    <Compile Include="Xrm\Sdk\Client\AuthenticationPolicy.cs" />
+    <Compile Include="Xrm\Sdk\Client\AuthenticationPolicyImporter.cs" />
+    <Compile Include="Xrm\Sdk\Client\AuthenticationProviderType.cs" />
+    <Compile Include="Xrm\Sdk\Client\ClaimsPolicyConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\FailoverPolicy.cs" />
+    <Compile Include="Xrm\Sdk\Client\IdentityProvider.cs" />
+    <Compile Include="Xrm\Sdk\Client\IdentityProviderTrustConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\IdentityProviderType.cs" />
+    <Compile Include="Xrm\Sdk\Client\IdentityProviderTypeDictionary.cs" />
+    <Compile Include="Xrm\Sdk\Client\OnlineFederationPolicyConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\OnlinePolicyConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\OrganizationServiceConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\PolicyConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\PolicyDictionary.cs" />
+    <Compile Include="Xrm\Sdk\Client\PolicyHelper.cs" />
+    <Compile Include="Xrm\Sdk\Client\ServiceConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\ServiceEndpointMetadata.cs" />
+    <Compile Include="Xrm\Sdk\Client\ServiceMetadataUtility.cs" />
+    <Compile Include="Xrm\Sdk\Client\ServiceUrls.cs" />
+    <Compile Include="Xrm\Sdk\Client\WindowsPolicyConfiguration.cs" />
+    <Compile Include="Xrm\Sdk\Client\XrmPolicy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Xrm.Sdk\prj\Microsoft.Xrm.Sdk\Microsoft.Xrm.Sdk.csproj">
+      <Project>{2765100f-7fe9-43ed-820a-4ec87c73d47b}</Project>
+      <Name>Microsoft.Xrm.Sdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
