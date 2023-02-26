@@ -4,6 +4,8 @@
 // MVID: 6ED27353-7D93-4D8D-9CA3-2396F24E6015
 // Assembly location: C:\Stas\Projects\Tricolor\To365\MyCrmRestService\Code\Decomp\Microsoft.Xrm.Sdk\Microsoft.Xrm.Sdk.dll
 
+//using Microsoft.Xrm.Sdk.Discovery;
+//using Microsoft.Xrm.Sdk.Discovery;
 using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Discovery;
 using System;
@@ -14,21 +16,21 @@ using System.ServiceModel.Description;
 namespace MyCrmConnector.Client
 {
     internal sealed class DiscoveryServiceConfiguration :
-      IServiceConfiguration<IDiscoveryService>,
+      Microsoft.Xrm.Sdk.Client.IServiceConfiguration<Microsoft.Xrm.Sdk.Discovery.IDiscoveryService>,
       //IWebAuthentication<IDiscoveryService>,
-      IServiceManagement<IDiscoveryService>,
-      IEndpointSwitch
+      Microsoft.Xrm.Sdk.Client.IServiceManagement<Microsoft.Xrm.Sdk.Discovery.IDiscoveryService>,
+      Microsoft.Xrm.Sdk.Client.IEndpointSwitch
     {
-        public IssuerEndpoint CurrentIssuer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Microsoft.Xrm.Sdk.Client.IssuerEndpoint CurrentIssuer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public ServiceEndpoint CurrentServiceEndpoint { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Microsoft.Xrm.Sdk.Client.AuthenticationProviderType AuthenticationType => throw new NotImplementedException();
 
         public ServiceEndpointDictionary ServiceEndpoints => throw new NotImplementedException();
 
-        public IssuerEndpointDictionary IssuerEndpoints => throw new NotImplementedException();
+        public Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary IssuerEndpoints => throw new NotImplementedException();
 
-        public CrossRealmIssuerEndpointCollection CrossRealmIssuerEndpoints => throw new NotImplementedException();
+        public Microsoft.Xrm.Sdk.Client.CrossRealmIssuerEndpointCollection CrossRealmIssuerEndpoints => throw new NotImplementedException();
 
         public Microsoft.Xrm.Sdk.Client.PolicyConfiguration PolicyConfiguration => throw new NotImplementedException();
 
@@ -39,8 +41,6 @@ namespace MyCrmConnector.Client
         public Uri PrimaryEndpoint => throw new NotImplementedException();
 
         public bool IsPrimaryEndpoint => throw new NotImplementedException();
-
-        //private readonly ServiceConfiguration<IDiscoveryService> service;
 
         private DiscoveryServiceConfiguration()
         {
@@ -66,7 +66,7 @@ namespace MyCrmConnector.Client
             throw new NotImplementedException();
         }
 
-        public ChannelFactory<IDiscoveryService> CreateChannelFactory(TokenServiceCredentialType endpointType)
+        public ChannelFactory<IDiscoveryService> CreateChannelFactory(Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType endpointType)
         {
             throw new NotImplementedException();
         }
@@ -111,7 +111,7 @@ namespace MyCrmConnector.Client
             throw new NotImplementedException();
         }
 
-        public AuthenticationCredentials Authenticate(AuthenticationCredentials authenticationCredentials)
+        public DiscoveryResponse Execute(DiscoveryRequest request)
         {
             throw new NotImplementedException();
         }
@@ -127,6 +127,11 @@ namespace MyCrmConnector.Client
         }
 
         public bool HandleEndpointSwitch()
+        {
+            throw new NotImplementedException();
+        }
+
+        public AuthenticationCredentials Authenticate(AuthenticationCredentials authenticationCredentials)
         {
             throw new NotImplementedException();
         }

@@ -123,7 +123,7 @@ namespace MyCrmConnector.Client
         }
 
         public static IssuerEndpointDictionary RetrieveDefaultIssuerEndpoint(
-          AuthenticationProviderType authenticationProviderType,
+          Microsoft.Xrm.Sdk.Client.AuthenticationProviderType authenticationProviderType,
           IssuerEndpoint issuer)
         {
             IssuerEndpointDictionary endpointDictionary = new IssuerEndpointDictionary();
@@ -132,10 +132,10 @@ namespace MyCrmConnector.Client
                 TokenServiceCredentialType serviceCredentialType;
                 switch (authenticationProviderType)
                 {
-                    case AuthenticationProviderType.Federation:
+                    case Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.Federation:
                         serviceCredentialType = TokenServiceCredentialType.Kerberos;
                         break;
-                    case AuthenticationProviderType.OnlineFederation:
+                    case Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.OnlineFederation:
                         serviceCredentialType = TokenServiceCredentialType.Username;
                         break;
                     default:
@@ -153,7 +153,7 @@ namespace MyCrmConnector.Client
         }
 
         public static IssuerEndpointDictionary RetrieveIssuerEndpoints(
-          AuthenticationProviderType authenticationProviderType,
+          Microsoft.Xrm.Sdk.Client.AuthenticationProviderType authenticationProviderType,
           ServiceEndpointDictionary endpoints,
           bool queryMetadata)
         {
@@ -376,27 +376,27 @@ namespace MyCrmConnector.Client
 
         internal static void AdjustUserNameForWindows(ClientCredentials clientCredentials)
         {
-            //Microsoft.Xrm.Sdk.ClientExceptionHelper.ThrowIfNull((object) clientCredentials, nameof (clientCredentials));
-            //if (string.IsNullOrWhiteSpace(clientCredentials.UserName.UserName))
-            //  return;
-            //NetworkCredential networkCredential;
-            //if (clientCredentials.UserName.UserName.IndexOf('@') > -1)
-            //{
-            //  string[] strArray = clientCredentials.UserName.UserName.Split('@');
-            //  networkCredential = strArray.Length <= 1 ? new NetworkCredential(strArray[0], clientCredentials.UserName.Password) : new NetworkCredential(strArray[0], clientCredentials.UserName.Password, strArray[1]);
-            //}
-            //else if (clientCredentials.UserName.UserName.IndexOf('\\') > -1)
-            //{
-            //  string[] strArray = clientCredentials.UserName.UserName.Split('\\');
-            //  networkCredential = strArray.Length <= 1 ? new NetworkCredential(strArray[0], clientCredentials.UserName.Password) : new NetworkCredential(strArray[1], clientCredentials.UserName.Password, strArray[0]);
-            //}
-            //else
-            //  networkCredential = new NetworkCredential(clientCredentials.UserName.UserName, clientCredentials.UserName.Password);
-            //clientCredentials.Windows.ClientCredential = networkCredential;
-            //clientCredentials.UserName.UserName = string.Empty;
-            //clientCredentials.UserName.Password = string.Empty;
-            Console.WriteLine("AdjustUserNameForWindows");
-            throw new NotImplementedException();
+            ClientExceptionHelper.ThrowIfNull((object)clientCredentials, nameof(clientCredentials));
+            if (string.IsNullOrWhiteSpace(clientCredentials.UserName.UserName))
+                return;
+            NetworkCredential networkCredential;
+            if (clientCredentials.UserName.UserName.IndexOf('@') > -1)
+            {
+                string[] strArray = clientCredentials.UserName.UserName.Split('@');
+                networkCredential = strArray.Length <= 1 ? new NetworkCredential(strArray[0], clientCredentials.UserName.Password) : new NetworkCredential(strArray[0], clientCredentials.UserName.Password, strArray[1]);
+            }
+            else if (clientCredentials.UserName.UserName.IndexOf('\\') > -1)
+            {
+                string[] strArray = clientCredentials.UserName.UserName.Split('\\');
+                networkCredential = strArray.Length <= 1 ? new NetworkCredential(strArray[0], clientCredentials.UserName.Password) : new NetworkCredential(strArray[1], clientCredentials.UserName.Password, strArray[0]);
+            }
+            else
+                networkCredential = new NetworkCredential(clientCredentials.UserName.UserName, clientCredentials.UserName.Password);
+            clientCredentials.Windows.ClientCredential = networkCredential;
+            clientCredentials.UserName.UserName = string.Empty;
+            clientCredentials.UserName.Password = string.Empty;
+            //Console.WriteLine("AdjustUserNameForWindows");
+            //throw new NotImplementedException();
         }
     }
 }

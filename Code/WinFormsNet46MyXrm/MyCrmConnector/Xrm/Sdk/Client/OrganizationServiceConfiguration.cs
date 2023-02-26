@@ -264,11 +264,21 @@ namespace MyCrmConnector.Client
 
         public IssuerEndpoint CurrentIssuer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public AuthenticationProviderType AuthenticationType => throw new NotImplementedException();
+        public AuthenticationProviderType AuthenticationType => this.service.AuthenticationType;
 
-        Microsoft.Xrm.Sdk.Client.AuthenticationProviderType IServiceConfiguration<IOrganizationService>.AuthenticationType => throw new NotImplementedException();
+        //AuthenticationProviderType IServiceConfiguration<IOrganizationService>.AuthenticationType => throw new NotImplementedException();
 
-        Microsoft.Xrm.Sdk.Client.AuthenticationProviderType IServiceManagement<IOrganizationService>.AuthenticationType => throw new NotImplementedException();
+        //AuthenticationProviderType IServiceManagement<IOrganizationService>.AuthenticationType => throw new NotImplementedException();
+
+        Microsoft.Xrm.Sdk.Client.IssuerEndpoint IServiceConfiguration<IOrganizationService>.CurrentIssuer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary IServiceConfiguration<IOrganizationService>.IssuerEndpoints => throw new NotImplementedException();
+
+        Microsoft.Xrm.Sdk.Client.CrossRealmIssuerEndpointCollection IServiceConfiguration<IOrganizationService>.CrossRealmIssuerEndpoints => throw new NotImplementedException();
+
+        Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary IServiceManagement<IOrganizationService>.IssuerEndpoints => throw new NotImplementedException();
+
+        Microsoft.Xrm.Sdk.Client.CrossRealmIssuerEndpointCollection IServiceManagement<IOrganizationService>.CrossRealmIssuerEndpoints => throw new NotImplementedException();
 
         public bool CanSwitch(Uri currentUri) => this.service.CanSwitch(currentUri);
 
@@ -278,6 +288,46 @@ namespace MyCrmConnector.Client
         }
 
         Microsoft.Xrm.Sdk.Client.IdentityProvider IServiceManagement<IOrganizationService>.GetIdentityProvider(string userPrincipalName)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public ChannelFactory<IOrganizationService> CreateChannelFactory(Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType endpointType)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public ChannelFactory<IOrganizationService> CreateChannelFactory(Microsoft.Xrm.Sdk.Client.ClientAuthenticationType clientAuthenticationType)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        Microsoft.Xrm.Sdk.Client.SecurityTokenResponse IServiceConfiguration<IOrganizationService>.Authenticate(ClientCredentials clientCredentials)
+        {
+            throw new NotImplementedException();
+        }
+
+        Microsoft.Xrm.Sdk.Client.SecurityTokenResponse IServiceConfiguration<IOrganizationService>.Authenticate(SecurityToken securityToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Microsoft.Xrm.Sdk.Client.SecurityTokenResponse IServiceConfiguration<IOrganizationService>.AuthenticateCrossRealm(ClientCredentials clientCredentials, string appliesTo, Uri crossRealmSts)
+        {
+            throw new NotImplementedException();
+        }
+
+        Microsoft.Xrm.Sdk.Client.SecurityTokenResponse IServiceConfiguration<IOrganizationService>.AuthenticateCrossRealm(SecurityToken securityToken, string appliesTo, Uri crossRealmSts)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public Microsoft.Xrm.Sdk.Client.SecurityTokenResponse Authenticate(ClientCredentials clientCredentials, Microsoft.Xrm.Sdk.Client.SecurityTokenResponse deviceSecurityToken)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        Microsoft.Xrm.Sdk.Client.SecurityTokenResponse IServiceConfiguration<IOrganizationService>.AuthenticateDevice(ClientCredentials clientCredentials)
         {
             throw new NotImplementedException();
         }

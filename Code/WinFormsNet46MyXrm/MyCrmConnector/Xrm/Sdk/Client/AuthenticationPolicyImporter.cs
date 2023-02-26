@@ -190,9 +190,9 @@ namespace MyCrmConnector.Client
     {
             bool flag = true;
             MyCrmConnector.Client.AuthenticationPolicy authenticationPolicy = context.BindingElements.Find<MyCrmConnector.Client.AuthenticationPolicy>();
-            AuthenticationProviderType result;
-            if (authenticationPolicy != null && authenticationPolicy.PolicyElements.ContainsKey("AuthenticationType") && Enum.TryParse<AuthenticationProviderType>(authenticationPolicy.PolicyElements["AuthenticationType"], out result))
-                flag = result != AuthenticationProviderType.OnlineFederation && result != AuthenticationProviderType.LiveId;
+            Microsoft.Xrm.Sdk.Client.AuthenticationProviderType result;
+            if (authenticationPolicy != null && authenticationPolicy.PolicyElements.ContainsKey("AuthenticationType") && Enum.TryParse<Microsoft.Xrm.Sdk.Client.AuthenticationProviderType>(authenticationPolicy.PolicyElements["AuthenticationType"], out result))
+                flag = result != Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.OnlineFederation && result != Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.LiveId;
             if (this._importer == null)
                 return;
             if (flag)

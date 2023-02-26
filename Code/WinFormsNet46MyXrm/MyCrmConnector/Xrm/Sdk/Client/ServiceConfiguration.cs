@@ -57,7 +57,24 @@ namespace MyCrmConnector.Client
             set => this.currentServiceEndpoint = value;
         }
 
-        
+        public AuthenticationProviderType AuthenticationType
+        {
+            get
+            {
+                if (this.PolicyConfiguration is WindowsPolicyConfiguration)
+                {
+                    return AuthenticationProviderType.ActiveDirectory;
+                }
+                if (this.PolicyConfiguration is ClaimsPolicyConfiguration)
+                {
+                    return AuthenticationProviderType.Federation;
+                }
+                //if (this.PolicyConfiguration is LiveIdPolicyConfiguration)
+                //    return AuthenticationProviderType.LiveId;
+                return this.PolicyConfiguration is OnlineFederationPolicyConfiguration ? AuthenticationProviderType.OnlineFederation : AuthenticationProviderType.None;
+            }
+        }
+
         internal ServiceConfiguration(Uri serviceUri, bool checkForSecondary)
         {
             this.ServiceUri = serviceUri;
@@ -382,8 +399,8 @@ namespace MyCrmConnector.Client
 
         #region interface
 
-        public bool EndpointAutoSwitchEnabled { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Uri AlternateEndpoint => throw new NotImplementedException();
+        public bool EndpointAutoSwitchEnabled { get; set; }
+        public Uri AlternateEndpoint { get; internal set; }
         //public Uri PrimaryEndpoint => throw new NotImplementedException();
         public Uri PrimaryEndpoint { get; internal set; }
         public bool IsPrimaryEndpoint => throw new NotImplementedException();

@@ -2,6 +2,7 @@
 //using Microsoft.Xrm.Sdk.Client;
 //using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using MyCrmConnector;
 using System;
 using System.Collections.Generic;
@@ -38,10 +39,21 @@ namespace WinFormsNet46MyXrm
 
             //Console.WriteLine(res?.Id);
 
-            var serviceUri =
-                new Uri("http://172.23.57.20/NSC/XRMServices/2011/Organization.svc");
-            var c = new CrmClient();
-            var t = c.CreateManagement<IOrganizationService>(serviceUri, false, null);
+            //var serviceUri =
+            //    new Uri("http://172.23.57.20/NSC/XRMServices/2011/Organization.svc");
+            //var сrmClient = new CrmClient();
+            //var orgServiceManagement = сrmClient.CreateManagement<IOrganizationService>(serviceUri, false, null);
+
+            var сrmClient = new CrmClient();
+            var orgService = сrmClient.GetOrganizationService();
+
+            var query = new QueryExpression("systemuser");
+            query.ColumnSet = new ColumnSet("systemuserid");
+            query.Criteria.AddCondition("systemuserid", ConditionOperator.Equal, new Guid("{1E932C9A-A92F-E511-80E8-0050568732BC}"));
+
+            var res = orgService.RetrieveMultiple(query).Entities.FirstOrDefault();
+
+            Console.WriteLine(res?.Id);
 
             Console.WriteLine("Конец.");
         }

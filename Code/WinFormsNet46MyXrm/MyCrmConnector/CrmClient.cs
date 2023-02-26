@@ -30,5 +30,30 @@ namespace MyCrmConnector
             }
             return (IServiceManagement<TService>)null;
         }
+
+        public IOrganizationService GetOrganizationService()
+        {
+            var serviceUri =
+                new Uri("http://172.23.57.20/NSC/XRMServices/2011/Organization.svc");
+            var orgServiceManagement = this.CreateManagement<IOrganizationService>(serviceUri, false, null);
+            var credentials = GetCredentials();
+
+            var proxy =
+                new MyCrmConnector.Client.OrganizationServiceProxy(orgServiceManagement, credentials.ClientCredentials);
+
+            return proxy;
+
+        }
+
+        private AuthenticationCredentials GetCredentials()
+        {
+            var userName = "crm-sysuser";
+            var password = "[2cekthsfhukm]";
+            var domain = "bss";
+            var authCredentials = new AuthenticationCredentials();
+            authCredentials.ClientCredentials.Windows.ClientCredential =
+                new System.Net.NetworkCredential(userName, password, domain);
+            return authCredentials;
+        }
     }
 }
