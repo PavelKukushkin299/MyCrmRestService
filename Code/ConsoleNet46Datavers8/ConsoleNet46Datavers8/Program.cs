@@ -56,7 +56,7 @@ namespace ConsoleNet46Datavers8
 
             //var organizationService = new CrmOrganizationService(proxy);
             //var orgService = new OnPremiseClient("http://172.23.57.20/NSC/XRMServices/2011/Organization.svc", "bss\\crm-sysuser", "[2cekthsfhukm]");
-            var orgService = new OnPremiseClient("http://172.23.57.22/NSC/XRMServices/2011/Organization.svc", "bss\\avzharov", "Passw0rd!DEV");
+            var orgService = new OnPremiseClient("http://172.23.57.20/NSC/XRMServices/2011/Organization.svc", "bss\\avzharov", "Passw0rd!DEV");
             orgService.EnableProxyTypes();
 
             //var query = new QueryExpression("systemuser");

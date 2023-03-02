@@ -69,7 +69,8 @@ namespace Data8.PowerPlatform.Dataverse.Client
 
         public OnPremiseClient(string url, ClientCredentials credentials)
         {
-            List<Definitions> source = new Uri(url).Scheme.Equals("https", StringComparison.OrdinalIgnoreCase) ? WsdlLoader.Load(url + "?wsdl&sdkversion=" + OnPremiseClient._sdkMajorVersion.ToString()).ToList<Definitions>() : throw new NotSupportedException("Only https connections are supported");
+            //List<Definitions> source = new Uri(url).Scheme.Equals("https", StringComparison.OrdinalIgnoreCase) ? WsdlLoader.Load(url + "?wsdl&sdkversion=" + OnPremiseClient._sdkMajorVersion.ToString()).ToList<Definitions>() : throw new NotSupportedException("Only https connections are supported");
+            List<Definitions> source = WsdlLoader.Load(url + "?wsdl&sdkversion=" + OnPremiseClient._sdkMajorVersion.ToString()).ToList<Definitions>();
             List<Data8.PowerPlatform.Dataverse.Client.Wsdl.Policy> list = source.Where<Definitions>((Func<Definitions, bool>)(w => w.Policies != null)).SelectMany<Definitions, Data8.PowerPlatform.Dataverse.Client.Wsdl.Policy>((Func<Definitions, IEnumerable<Data8.PowerPlatform.Dataverse.Client.Wsdl.Policy>>)(w => (IEnumerable<Data8.PowerPlatform.Dataverse.Client.Wsdl.Policy>)w.Policies)).ToList<Data8.PowerPlatform.Dataverse.Client.Wsdl.Policy>();
             AuthenticationPolicy authenticationPolicy = list.Select<Data8.PowerPlatform.Dataverse.Client.Wsdl.Policy, AuthenticationPolicy>((Func<Data8.PowerPlatform.Dataverse.Client.Wsdl.Policy, AuthenticationPolicy>)(p => p.FindPolicyItem<AuthenticationPolicy>())).Where<AuthenticationPolicy>((Func<AuthenticationPolicy, bool>)(t => t != null)).FirstOrDefault<AuthenticationPolicy>();
             if (authenticationPolicy == null)
@@ -358,7 +359,7 @@ namespace Data8.PowerPlatform.Dataverse.Client
             var clientCredentials = GetCredentials(domain, username, password).ClientCredentials;
 
             var orgService = new OrganizationServiceProxy(orgServiceManagement, clientCredentials);
-            this._innerService = orgService as IOrganizationService;
+            //this._innerService = orgService as IOrganizationService;
             //this._service = (IOrganizationService)(new OrganizationServiceProxy(orgServiceManagement, clientCredentials));
 
         }
